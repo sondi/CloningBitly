@@ -6,3 +6,9 @@
   <input type="submit" value="send">
 </form>
 
+<%	@url_view.each do |list_item|%>
+	<ul>
+		<li><p> Original URL </p><%= list_item.url %></li>
+		<li>Short URL<a href="<%= list_item.short_url %>"><%= list_item.short_url %></a></li>
+	</ul>
+<%	end %>
