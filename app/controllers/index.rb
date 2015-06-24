@@ -16,6 +16,11 @@ end
 
 # e.g., /q6bda
 get '/:short_url' do
-  # redirige a la URL original
+  short_url = params[:short_url]
+  url_instance = Url.find_by(short_url: "http://localhost:9393/#{short_url}")
+  url_instance.click_count += 1
+  url_instance.save
+
+  redirect to url_instance.url
 end
 

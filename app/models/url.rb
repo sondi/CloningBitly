@@ -1,6 +1,6 @@
 class Url < ActiveRecord::Base
 
-	before_save :create_short_url
+	before_create :create_short_url
 
 	def create_short_url
 		array = []
